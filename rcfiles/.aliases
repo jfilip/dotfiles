@@ -1,0 +1,4 @@
+alias dir='ls -aFh'
+alias df='df -h'
+alias gitgc='du -sh .git; git gc --prune=now; du -sh .git'
+alias top='top -ocpu'
