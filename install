@@ -19,10 +19,13 @@ if [[ ! -d "${ZDOTDIR:-$HOME}"/.zprezto ]]; then
   done
 fi
 
-if [[ -d "${HOME}"/Library/Application\ Support/iTerm2/DynamicProfiles ]]; then
-  ln -s "${PWD}"/iterm_profile-jkitty.json "${HOME}"/Library/Application\ Support/iTerm2/DynamicProfiles/
+iterm_profile_path="${HOME}/Library/Application Support/iTerm2/DynamicProfiles"
+iterm_profile_file="iterm_profile-jkitty.json"
+
+if [[ -d "$iterm_profile_path" && ! -f "${iterm_profile_path}/${iterm_profile_file}" ]]; then
+  ln -s "${PWD}/${iterm_profile_file}" "$iterm_profile_path/"
 fi
 
 for rcfile in "${PWD}"/rcfiles/.*; do
-  [[ ! -f "${HOME}/`basename $rcfile`" ]] && cp $rcfile "${HOME}/"
+  [[ ! -f "${HOME}/${rcfile:t}" ]] && ln -s $rcfile "${HOME}/${rcfile:t}"
 done
