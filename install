@@ -5,6 +5,13 @@ if [[ ! `echo $SHELL | grep "\/zsh$"` ]]; then
   exit 1
 fi
 
+if [[ ! -d "${ZDOTDIR:-$HOME}"/src/cli_tools ]]; then
+  [[ ! -d "${ZDOTDIR:-$HOME}"/src ]] && mkdir "${ZDOTDIR:-$HOME}"/src
+  cd "${ZDOTDIR:-$HOME}"/src
+  git clone https://github.com/jfilip/cli_tools.git
+  cd -
+fi
+
 if [[ ! -d "${ZDOTDIR:-$HOME}"/.zprezto ]]; then
   git clone --recursive https://github.com/jfilip/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
 
