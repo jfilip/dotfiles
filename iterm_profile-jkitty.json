@@ -352,7 +352,7 @@
                 "Red Component": 0.6745098233,
                 "Blue Component": 0.2588235438
             },
-            "Normal Font": "InputMono-Regular 11",
+            "Normal Font" : "FiraCode-Retina 11",
             "Horizontal Spacing": 1,
             "Custom Directory": "Recycle",
             "Right Option Key Sends": 0
