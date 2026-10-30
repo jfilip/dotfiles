@@ -1,0 +1,5 @@
+abbr -a dir 'ls -aFh'
+abbr -a df 'df -h'
+abbr -a gitgc 'du -sh .git; git gc --prune=now; du -sh .git'
+abbr -a top 'top -ocpu'
+abbr -a torrentui '/opt/src/tremc/tremc'

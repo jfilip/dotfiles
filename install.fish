@@ -34,3 +34,10 @@ for rcfile in $PWD/rcfiles/.*
     end
   end
 end
+
+for fish_config_file in $PWD/rcfiles/*.fish
+  set -l basename (basename $fish_config_file)
+  if not test -f "$HOME/.config/fish/$basename"
+    ln -s "$fish_config_file" "$HOME/.config/fish/conf.d/$basename"
+  end
+end
